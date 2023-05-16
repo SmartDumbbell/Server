@@ -35,3 +35,23 @@ button[type="submit"] {
     border: none;
     cursor: pointer;
 }
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.signup-container {
+    text-align: right;
+}
+
+.signup-container p {
+    margin-top: 10px;
+}
+
+.signup-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
