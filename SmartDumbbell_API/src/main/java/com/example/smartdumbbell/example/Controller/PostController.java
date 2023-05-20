@@ -1,7 +1,7 @@
 package com.example.smartdumbbell.example.Controller;
 
 
-import com.example.smartdumbbell.Register.DTO.SignUpDTO;
+import com.example.smartdumbbell.Unity.Auth.DTO.SignUpDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -3,17 +3,16 @@ package com.example.smartdumbbell_web.Login.Controller;
 import com.example.smartdumbbell_web.Login.DTO.LoginDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.reactive.function.BodyInserter;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
+
 
 @Controller
 public class LoginController {
@@ -34,8 +33,6 @@ public class LoginController {
         String id = request.getParameter("id");//web에서 받아온 값.
         String password = request.getParameter("password");
 
-        System.out.println("web의 정보 : " + id + " " + password);
-
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setId(id);
         loginDTO.setPassword(password);
@@ -46,10 +43,6 @@ public class LoginController {
         // 요청이 성공적으로 완료되면 true를 반환
         // 요청이 실패하면 false를 반환
 
-        /***
-            String 값을 리턴받기 위해 String.class사용
-         */
-
         String result = webClient.method(HttpMethod.POST)
                 .uri(LoginAPIURL)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -57,8 +50,6 @@ public class LoginController {
                 .retrieve()
                 .bodyToMono(String.class)   // API의 리턴을 String으로 받음
                 .block();
-
-        System.out.println(result);
 
         if(result.equals("true"))
             return "redirect:/main";
@@ -70,9 +61,14 @@ public class LoginController {
     @GetMapping("/main")
     public String GoMain(){return "main";}
 
-    @GetMapping("/su")
+    @GetMapping("/SignUp")
     public String SignUp(){
-        return "SignUP";
+        return "SignUp";
+    }
+
+    @GetMapping("/test")
+    public String test(){
+        return "test";
     }
 
 
