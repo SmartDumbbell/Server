@@ -2,55 +2,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>프로젝트 이름</title>
-  <link rel="stylesheet" href="path/to/main.css">
-  <script src="https://code.jquery.comx/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>프로젝트 이름</title>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 <div class="header">
-  <img src="/image/WebSystem_Main.png" alt="프로젝트 이미지" width="440" height="220">
+    <img src="/image/WebSystem_Main.png" alt="프로젝트 이미지" width="300" height="150">
 </div>
-<form>
-  <select id="dataSelect" style="font-size:20px">
-    <option>---선택하세요---</option>
-    <option value="all">환자 전체 리스트</option>
-    <option value="my">내 환자 리스트</option>
-    <option value="trainers">트레이너 리스트</option>
-    <option value="notes">비고</option>
-  </select>
+<form class = "leftbox">
+  <div class="sidebar">
+    <ul>
+      <li><a href="#" onclick="showTable('Users')">전체 유저 정도 정보</a></li>
+      <li><a href="#" onclick="showTable('MyUsers')">내 유저 정보</a></li>
+    </ul>
+  </div>
 </form>
 
-<div id="listContainer"></div>
+<div id="table-container"></div>
 
 <script>
-  // 옵션 선택 시 데이터를 호출하여 리스트로 보여주는 함수
-  function loadData(option) {
-    $.ajax({
-      url: '/api/data', // API 경로
-      type: 'GET',
-      data: { option: option },
-      success: function(data) {
-        var listData = JSON.parse(data);
-        var listHtml = '<ul>';
-        for (var i = 0; i < listData.length; i++) {
-          listHtml += '<li>' + listData[i].name + '</li>'; // 예시: name 속성을 리스트에 표시
-        }
-        listHtml += '</ul>';
+  function showTable(category) {
+    let apiUrl = "";
 
-        $('#listContainer').html(listHtml);
-      },
-      error: function() {
-        alert('데이터를 불러오는데 실패했습니다.');
-      }
-    });
+    if (category === "Users") {
+      apiUrl = "http://localhost:8080/WebProcess/UserAll";
+    } else if (category === "MyUsers") {
+      apiUrl = "http://localhost:8080/WebProcess/myUsers";
+    }
+
+    // API를 호출하여 사용자 리스트 데이터를 받아옴
+    fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+              // 표 생성
+              const tableContainer = document.getElementById("table-container");
+              tableContainer.innerHTML = ""; // 기존 표 초기화
+
+              const table = document.createElement("table");
+              table.classList.add("data-table");
+
+              const thead = document.createElement("thead");
+              const tr = document.createElement("tr");
+
+              const headers = Object.keys(data[0]);
+              for (const header of headers) {
+                const th = document.createElement("th");
+                th.textContent = header;
+                tr.appendChild(th);
+              }
+
+              thead.appendChild(tr);
+              table.appendChild(thead);
+
+              const tbody = document.createElement("tbody");
+              for (const item of data) {
+                const row = document.createElement("tr");
+
+                for (const header of headers) {
+                  const cell = document.createElement("td");
+                  cell.textContent = item[header];
+                  row.appendChild(cell);
+                }
+
+                tbody.appendChild(row);
+              }
+
+              table.appendChild(tbody);
+              tableContainer.appendChild(table);
+            })
+            .catch(error => {
+              console.error("Error fetching data:", error);
+            });
   }
 
-  // 옵션 선택 이벤트 리스너
-  $('#dataSelect').on('change', function() {
-    var selectedOption = $(this).val();
-    loadData(selectedOption);
-  });
 </script>
 </body>
 </html>

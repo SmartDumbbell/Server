@@ -1,40 +1,73 @@
+/* main.css */
+
+.leftbox{
+    height: 100%;
+}
+/* 테이블 스타일 */
+.data-table {
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tr:hover {
+    background-color: #ddd;
+}
+
+/* 헤더 및 사이드바 스타일 */
+.header {
+    text-align: left;
+}
+
+.sidebar {
+    float: left;
+    width: 300px;
+    height: 100%;
+    background-color: #989898;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 20px;
+
+    color: #000;
+}
+
+.sidebar a:hover {
+    color: #333;
+}
+
+/* 기타 스타일 */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.header {
-    background-color: #f2f2f2;
+#table-container {
+    margin-left: 220px;
     padding: 20px;
-    text-align: center;
-}
-
-.header img {
-    max-width: 200px;
-    height: auto;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.button-container button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-#listContainer {
-    margin-top: 20px;
-    text-align: center;
 }

@@ -58,19 +58,10 @@ public class LoginController {
 
     }
 
-    @GetMapping("/main")
-    public String GoMain(){return "main";}
-
     @GetMapping("/SignUp")
     public String SignUp(){
         return "SignUp";
     }
-
-    @GetMapping("/test")
-    public String test(){
-        return "test";
-    }
-
 
 }
 
