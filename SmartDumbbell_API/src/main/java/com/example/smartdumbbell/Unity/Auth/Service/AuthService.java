@@ -1,10 +1,7 @@
 package com.example.smartdumbbell.Unity.Auth.Service;
 
 
-import com.example.smartdumbbell.Unity.Auth.DTO.DuplicateDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.FindDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.SignInDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.SignUpDTO;
+import com.example.smartdumbbell.Unity.Auth.DTO.*;
 import com.example.smartdumbbell.Unity.Auth.Entity.User;
 import com.example.smartdumbbell.Unity.Auth.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +73,21 @@ public class AuthService {
             return "possible";
 
         return "impossible";
+    }
+
+    public String sarcUpdate(SarcDTO sarcDTO){
+        User user = userRepository.findById(sarcDTO.getId());
+
+        if(user==null)
+            return "noMember";
+
+        try {
+            userRepository.updateSarcF(sarcDTO.getId(), sarcDTO.getSarc_f());
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+        return "ok";
     }
 
 }

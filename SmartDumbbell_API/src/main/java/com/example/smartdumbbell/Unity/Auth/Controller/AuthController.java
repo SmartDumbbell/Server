@@ -1,10 +1,9 @@
 package com.example.smartdumbbell.Unity.Auth.Controller;
 
 
-import com.example.smartdumbbell.Unity.Auth.DTO.DuplicateDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.FindDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.SignInDTO;
-import com.example.smartdumbbell.Unity.Auth.DTO.SignUpDTO;
+import com.example.smartdumbbell.Unity.Auth.DTO.*;
+import com.example.smartdumbbell.Unity.Auth.Entity.User;
+import com.example.smartdumbbell.Unity.Auth.Repository.UserRepository;
 import com.example.smartdumbbell.Unity.Auth.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +15,7 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
+    private UserRepository userRepository;
 
     //회원가입
     @PostMapping("/SignUp")
@@ -78,6 +78,19 @@ public class AuthController {
                                               @RequestHeader("Content-Type") String contentType) {
         if("application/json".equals(contentType)){
             String res = authService.duplicateId(duplicateDTO);
+
+            return ResponseEntity.ok().body(res);
+        }else{
+            return ResponseEntity.badRequest().body("mismatched header");
+        }
+    }
+
+    //Sarc-f 점수 업데이트
+    @PostMapping("/sarc")
+    public ResponseEntity<String> upSarc(@RequestBody SarcDTO sarcDTO,
+                                           @RequestHeader("Content-Type") String contentType) {
+        if("application/json".equals(contentType)){
+            String res = authService.sarcUpdate(sarcDTO);
 
             return ResponseEntity.ok().body(res);
         }else{
