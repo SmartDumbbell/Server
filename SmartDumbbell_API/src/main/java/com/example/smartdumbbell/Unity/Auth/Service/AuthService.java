@@ -33,7 +33,7 @@ public class AuthService {
         user.setBirth(signUpDTO.getBirth());
         user.setGender(signUpDTO.getGender());
         user.setForget(signUpDTO.getForget());
-        user.setArmLength(signUpDTO.getArmlength());
+        user.setArm(signUpDTO.getArm());
         user.setSarc_f(0);//기본점수 0
         user.setDisease("");
 

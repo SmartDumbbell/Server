@@ -13,5 +13,5 @@ public class SignUpDTO {
     String birth;
     String gender;
     String forget;
-    String armlength;
+    String arm;
 }

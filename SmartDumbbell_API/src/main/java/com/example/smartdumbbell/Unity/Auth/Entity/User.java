@@ -40,8 +40,16 @@ public class User {
     @Column(nullable = false)
     private String gender;
 
+    public String getArm() {
+        return arm;
+    }
+
+    public void setArm(String arm) {
+        this.arm = arm;
+    }
+
     @Column(nullable = false)
-    private String armlength;
+    private String arm;
 
     @Column(nullable = false)
     private int sarc_f;
@@ -151,12 +159,6 @@ public class User {
         this.trainer = trainer;
     }
 
-    public String getArmLength() {
-        return armlength;
-    }
 
-    public void setArmLength(String armLength) {
-        this.armlength = armLength;
-    }
 
 }
