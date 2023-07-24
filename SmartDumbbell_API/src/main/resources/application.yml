@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://svc.sel4.cloudtype.app:30801/testdb
+    username: 'root'
+    password: '1234'
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create
