@@ -24,7 +24,7 @@ public class ProcessDataController {
     }
 
     @GetMapping("/UserAll")
-    public List<SignUpDTO> getAllUsers(){
+    public List<String> getAllUsers(){
         return processDataService.getAllUser();
     }
 

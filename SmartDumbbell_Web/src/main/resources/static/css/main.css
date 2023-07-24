@@ -1,8 +1,12 @@
 /* main.css */
-
-.leftbox{
-    height: 100%;
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
+
 /* 테이블 스타일 */
 .data-table {
     border-collapse: collapse;
@@ -32,11 +36,14 @@
     text-align: left;
 }
 
+.container {
+    display: flex;
+}
+
 .sidebar {
-    float: left;
     width: 300px;
-    height: 100%;
-    background-color: #989898;
+    height: calc(100vh - 170px);
+    background-color: #4e73df;
     padding: 20px;
 }
 
@@ -53,21 +60,71 @@
 .sidebar a {
     text-decoration: none;
     font-size: 20px;
-
-    color: #000;
+    font-family: 'Nunito', sans-serif;
+    height: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    display: block; /* 버튼 영역을 블록 레벨로 설정 */
+    padding: 0 10px; /* 버튼 내부 여백 설정 */
 }
 
 .sidebar a:hover {
     color: #333;
 }
 
-/* 기타 스타일 */
-body {
-    margin: 0;
-    padding: 0;
+/* 버튼에 추가된 스타일 */
+.sidebar button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #4e73df;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
 }
 
-#table-container {
-    margin-left: 220px;
-    padding: 20px;
+.sidebar button:hover {
+    background-color: #333;
+}
+
+.myButton {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    color: #000000;
+    border: 2px solid #4e73df;
+    text-align: center;
+}
+
+.myButton:hover{
+    color: #000000;
+    background-color: #b9b9b9;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myHeader {
+    font-family: 'Nunito', sans-serif;
+    border: 2px solid #4e73df;
+    background-color: white;
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+    width: 100px; /* 원하는 너비 값으로 수정 */
+    height: 50px; /* 원하는 높이 값으로 수정 */
+    display: inline-block;
+    line-height: 50px; /* 높이와 동일한 값을 지정하여 수직 가운데 정렬 */
+}
+
+
+.content {
+    flex-grow: 1;
+    padding-left: 1px;
 }

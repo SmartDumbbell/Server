@@ -28,10 +28,10 @@ public class ProcessDataService {
 
 
     //전체 유저를 전부 리턴
-    public List<SignUpDTO> getAllUser(){
+    public List<String> getAllUser(){
         List<User> users = userRepository.findAll();
         return users.stream()
-                .map(this::convertToDto)
+                .map(User::getName)
                 .collect(Collectors.toList());
     }
 
@@ -44,18 +44,9 @@ public class ProcessDataService {
     }
 
 
-    private SignUpDTO convertToDto(User person) {
+    private SignUpDTO convertToDto(User user) {
         SignUpDTO dto = new SignUpDTO();
-
-        dto.setName(person.getName());
-        dto.setGender(person.getGender());
-        dto.setId(person.getId());
-        dto.setPassword(person.getPassword());
-        dto.setWeight(String.valueOf(person.getWeight()));
-        dto.setHeight(String.valueOf(person.getHeight()));
-        dto.setBirth(person.getBirth());
-        dto.setForget(person.getForget());
-
+        dto.setName(user.getName());
         return dto;
     }
 

@@ -8,5 +8,8 @@ public class MainController {
     @GetMapping("/main")
     public String GoMain(){return "main";}
 
+    @GetMapping("/test")
+    public String test(){return "test2";}
+
 
 }
