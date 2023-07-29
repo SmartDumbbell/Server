@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 @Entity
 @NoArgsConstructor
@@ -117,6 +120,16 @@ public class User {
 
     public void setBirth(String birth) {
         this.birth = birth;
+    }
+
+    //생년월일로 나이 계산
+    public int getBirthToAge() {
+
+        String yearOfBirth = birth.substring(0, 2);
+
+        String currentYear = LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
+
+        return Integer.parseInt(currentYear) - Integer.parseInt(yearOfBirth) + 1;
     }
 
     public String getGender() {

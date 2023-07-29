@@ -1,6 +1,5 @@
 package com.example.smartdumbbell.Unity.Measure.Entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
