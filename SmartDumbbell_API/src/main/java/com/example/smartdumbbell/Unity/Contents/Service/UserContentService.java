@@ -8,7 +8,6 @@ import com.example.smartdumbbell.Unity.Contents.Repository.UserContentStatsRepos
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 
 @Service
 public class UserContentService {
@@ -23,10 +22,11 @@ public class UserContentService {
     }
 
     public void updateContentCount(UserContentStatsDTO dto) {
-        // UserContentStatsDTO에서 빌더 패턴으로 객체 생성
+        User user = userRepository.findById(dto.getUserId())
+                .orElseThrow(() -> new IllegalArgumentException("User not found with the given userId."));
+
         UserContentStats userContentStats = UserContentStats.builder()
-                .user(userRepository.findById(dto.getUserId())
-                        .orElseThrow(() -> new IllegalArgumentException("User not found.")))
+                .user(user)
                 .date(dto.getDate())
                 .content1Count(dto.getContent1Count())
                 .content2Count(dto.getContent2Count())
@@ -39,3 +39,4 @@ public class UserContentService {
         userContentStatsRepository.save(userContentStats);
     }
 }
+

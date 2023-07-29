@@ -57,8 +57,8 @@ public class AuthService {
         return user.getPassword();
     }
 
-    public String forgetId(FindDTO findDTO){
-        User user = userRepository.findByIdAndBirth(findDTO.getId(), findDTO.getBirth());
+    public String forgetId(FindIdDTO findIdDTO){
+        User user = userRepository.findByNameAndBirth(findIdDTO.getName(), findIdDTO.getBirth());
 
         if(user == null)
             return "Not a member";
@@ -67,7 +67,8 @@ public class AuthService {
     }
 
     public String duplicateId(DuplicateDTO duplicateDTO){
-        User user = userRepository.findById(duplicateDTO.getId());
+        User user = userRepository.findById(duplicateDTO.getId())
+                .orElseThrow(() -> new IllegalArgumentException("User not found with the given userId."));
 
         if(user == null)
             return "possible";
@@ -76,7 +77,8 @@ public class AuthService {
     }
 
     public String sarcUpdate(SarcDTO sarcDTO){
-        User user = userRepository.findById(sarcDTO.getId());
+        User user = userRepository.findById(sarcDTO.getId())
+                .orElseThrow(() -> new IllegalArgumentException("User not found with the given userId."));
 
         if(user==null)
             return "noMember";

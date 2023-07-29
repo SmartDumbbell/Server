@@ -20,9 +20,13 @@ public class ContentsController {
 
         if("application/json".equals(contentType)){
 
-            userContentService.updateContentCount(userContentStatsDTO);
+            try{
+                userContentService.updateContentCount(userContentStatsDTO);
+            }catch (Exception e){
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
 
-            return ResponseEntity.ok("SignUp Complete");
+            return ResponseEntity.ok("data update");
         }else{
             return ResponseEntity.badRequest().body("mismatched header");
         }

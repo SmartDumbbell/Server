@@ -6,8 +6,7 @@ import java.time.LocalDate;
 
 @Data
 public class UserContentStatsDTO {
-
-    private Long userId;
+    private String userId; // User 엔티티의 id를 문자열로 받습니다.
     private LocalDate date;
     private int content1Count;
     private int content2Count;
@@ -15,4 +14,6 @@ public class UserContentStatsDTO {
     private int content4Count;
     private int content5Count;
     private int content6Count;
+
 }
+

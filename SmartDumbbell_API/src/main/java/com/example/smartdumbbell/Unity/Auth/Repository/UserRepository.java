@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -20,13 +21,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByIdAndForget(String id, String forget);
 
     //아이디 찾기를 위한 User 객체 찾기
-    User findByIdAndBirth(String id, String birth);
+    User findByNameAndBirth(String name, String birth);
 
     //아이디 중복 검사를 위한 User 객체 찾기
-    User findById(String id);
+    Optional<User> findById(String id);
 
     //특정 트레이너의 유저 찾기.
     List<User> findByTrainer(String trainer);
+
+    // uid로 User 객체 찾기
+    Optional<User> findByUid(Long uid);
 
     @Transactional
     @Modifying

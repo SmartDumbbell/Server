@@ -61,10 +61,10 @@ public class AuthController {
 
     //아이디 찾기
     @PostMapping("/ForgetID")
-    public ResponseEntity<String> ForgetID(@RequestBody FindDTO findDTO,
+    public ResponseEntity<String> ForgetID(@RequestBody FindIdDTO findIdDTO,
                                            @RequestHeader("Content-Type") String contentType){
         if("application/json".equals(contentType)){
-            String res = authService.forgetId(findDTO);
+            String res = authService.forgetId(findIdDTO);
 
             return ResponseEntity.ok().body(res);
         }else{

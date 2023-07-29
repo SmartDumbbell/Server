@@ -21,7 +21,7 @@ public class UserContentStats {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User user; // User 엔티티와의 연관 관계를 설정합니다.
 
     @Column(nullable = false)
     private LocalDate date;
@@ -43,7 +43,6 @@ public class UserContentStats {
 
     @Column(name = "content_6", nullable = false)
     private int content6Count;
-
     public Long getId() {
         return id;
     }
