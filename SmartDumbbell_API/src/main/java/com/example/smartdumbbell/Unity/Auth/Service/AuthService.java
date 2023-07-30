@@ -48,8 +48,8 @@ public class AuthService {
 
     }
 
-    public String forgetPassword(FindDTO findDTO){
-        User user = userRepository.findByIdAndForget(findDTO.getId(), findDTO.getForget());
+    public String forgetPassword(FindPWDTO findPWDTO){
+        User user = userRepository.findByNameAndIdAndForget(findPWDTO.getName(), findPWDTO.getId(), findPWDTO.getForget());
 
         if(user == null)
             return "Not a member";

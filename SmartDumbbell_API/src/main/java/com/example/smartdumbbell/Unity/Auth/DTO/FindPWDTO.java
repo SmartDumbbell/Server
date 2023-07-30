@@ -4,9 +4,8 @@ package com.example.smartdumbbell.Unity.Auth.DTO;
 import lombok.Data;
 
 @Data
-public class FindDTO {
+public class FindPWDTO {
     String id;
     String name;
-    String birth;
     String forget;
 }

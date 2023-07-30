@@ -2,7 +2,6 @@ package com.example.smartdumbbell.Unity.Auth.Controller;
 
 
 import com.example.smartdumbbell.Unity.Auth.DTO.*;
-import com.example.smartdumbbell.Unity.Auth.Entity.User;
 import com.example.smartdumbbell.Unity.Auth.Repository.UserRepository;
 import com.example.smartdumbbell.Unity.Auth.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,11 +46,11 @@ public class AuthController {
 
     //비밀번호 찾기
     @PostMapping("/ForgetPassword")
-    public ResponseEntity<String> ForgetPassword(@RequestBody FindDTO findDTO,
+    public ResponseEntity<String> ForgetPassword(@RequestBody FindPWDTO findPWDTO,
                                          @RequestHeader("Content-Type") String contentType){
 
         if("application/json".equals(contentType)){
-            String res = authService.forgetPassword(findDTO);
+            String res = authService.forgetPassword(findPWDTO);
 
             return ResponseEntity.ok().body(res);
         }else{
