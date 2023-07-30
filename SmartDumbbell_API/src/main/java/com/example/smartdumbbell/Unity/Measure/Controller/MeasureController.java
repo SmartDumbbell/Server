@@ -54,6 +54,8 @@ public class MeasureController {
     public ResponseEntity<String> CreateRow(@RequestBody GripDTO gripDTO,
                                             @RequestHeader("Content-Type") String contentType){
         if("application/json".equals(contentType)){
+
+            System.out.println("?");
             try {
                 measureService.CreateDataRow(gripDTO);
                 return ResponseEntity.ok().body("Create Success");

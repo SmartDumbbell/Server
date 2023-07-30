@@ -6,7 +6,7 @@ import java.sql.Date;
 
 @Data
 public class GripDTO {
-    String name;
+    String id;
     Date date;
     float grip_left;
     float grip_right;

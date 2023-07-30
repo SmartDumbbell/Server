@@ -22,7 +22,7 @@ public class MeasureService {
                 .date(gripDTO.getDate())
                 .grip_right(gripDTO.getGrip_right())
                 .grip_left(gripDTO.getGrip_left())
-                .name(gripDTO.getName())
+                .id(gripDTO.getId())
                 .build();
 
         measureRepository.save(measure);
@@ -33,7 +33,7 @@ public class MeasureService {
                 .date(countDTO.getDate())
                 .count_left(countDTO.getCount_left())
                 .count_right(countDTO.getCount_right())
-                .name(countDTO.getName())
+                .id(countDTO.getId())
                 .build();
 
         measureRepository.save(measure);
@@ -42,7 +42,7 @@ public class MeasureService {
     //로그인 시 악력과 횟수 데이터를 저장할 행을 생성.
     public void CreateDataRow(GripDTO gripDTO){
         Measure measure = Measure.builder()
-                .name(gripDTO.getName())
+                .id(gripDTO.getId())
                 .date(gripDTO.getDate())
                 .build();
 
