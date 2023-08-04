@@ -32,6 +32,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // uid로 User 객체 찾기
     Optional<User> findByUid(Long uid);
 
+
+
     @Transactional
     @Modifying
     @Query("UPDATE User u SET u.sarc_f = :sarcF WHERE u.id = :id")

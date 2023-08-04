@@ -17,11 +17,11 @@ public class MeasureController {
     private MeasureService measureService;
 
     //악력 측정 데이터 저장
-    @PostMapping("/SaveGrip")
-    public ResponseEntity<String> SaveGrip (@RequestBody GripDTO gripDTO,
+    @PostMapping("/Grip")
+    public ResponseEntity<String> Grip(@RequestBody GripDTO gripDTO,
                                             @RequestHeader("Content-Type") String contentType){
-
         if("application/json".equals(contentType)){
+
             try {
                 measureService.SaveGripData(gripDTO);
                 return ResponseEntity.ok().body("save data");
@@ -34,8 +34,8 @@ public class MeasureController {
     }
 
     //횟수 측정 데이터 저장
-    @PostMapping("/SaveCount")
-    public ResponseEntity<String> SaveCount (@RequestBody CountDTO countDTO,
+    @PostMapping("/Count")
+    public ResponseEntity<String> Count (@RequestBody CountDTO countDTO,
                                             @RequestHeader("Content-Type") String contentType){
 
         if("application/json".equals(contentType)){

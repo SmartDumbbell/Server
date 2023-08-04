@@ -1,6 +1,5 @@
 package com.example.smartdumbbell.Unity.Contents.Entity;
 
-import com.example.smartdumbbell.Unity.Auth.Entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,50 +12,22 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserContentStats {
+public class UserContentCountStats {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user; // User 엔티티와의 연관 관계를 설정합니다.
-
-    @Column(nullable = false)
-    private LocalDate date;
-
-    @Column(name = "content_1", nullable = false)
-    private int content1Count;
-
-    @Column(name = "content_2", nullable = false)
-    private int content2Count;
-
-    @Column(name = "content_3", nullable = false)
-    private int content3Count;
-
-    @Column(name = "content_4", nullable = false)
-    private int content4Count;
-
-    @Column(name = "content_5", nullable = false)
-    private int content5Count;
-
-    @Column(name = "content_6", nullable = false)
-    private int content6Count;
-    public Long getId() {
-        return id;
+    public Long getCid() {
+        return cid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCid(Long cid) {
+        this.cid = cid;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public LocalDate getDate() {
@@ -114,4 +85,33 @@ public class UserContentStats {
     public void setContent6Count(int content6Count) {
         this.content6Count = content6Count;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cid; // 기존의 Long id를 Long cid로 변경
+
+    @Column(name = "user_id", nullable = false)
+    private String userId; // String 타입의 userId로 변경
+
+    @Column(nullable = false)
+    private LocalDate date;
+
+    @Column(name = "content_1", nullable = false)
+    private int content1Count;
+
+    @Column(name = "content_2", nullable = false)
+    private int content2Count;
+
+    @Column(name = "content_3", nullable = false)
+    private int content3Count;
+
+    @Column(name = "content_4", nullable = false)
+    private int content4Count;
+
+    @Column(name = "content_5", nullable = false)
+    private int content5Count;
+
+    @Column(name = "content_6", nullable = false)
+    private int content6Count;
+
 }
