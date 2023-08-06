@@ -2,9 +2,7 @@ package com.example.smartdumbbell.Unity.Contents.Service;
 
 import com.example.smartdumbbell.Unity.Auth.Entity.User;
 import com.example.smartdumbbell.Unity.Auth.Repository.UserRepository;
-import com.example.smartdumbbell.Unity.Contents.DTO.ClusteringDataDTO;
-import com.example.smartdumbbell.Unity.Contents.DTO.UserContentCountStatsDTO;
-import com.example.smartdumbbell.Unity.Contents.DTO.UserContentScoreDTO;
+import com.example.smartdumbbell.Unity.Contents.DTO.*;
 import com.example.smartdumbbell.Unity.Contents.Entity.UserContentCountStats;
 import com.example.smartdumbbell.Unity.Contents.Entity.UserContentScoreStats;
 import com.example.smartdumbbell.Unity.Contents.Repository.UserContentScoreRepository;
@@ -168,10 +166,15 @@ public class UserContentService {
                     .content4Count(0)
                     .content5Count(0)
                     .content6Count(0)
+                    .build();
 
-        .build();
         }
         return contentStats;
+    }
+
+    public UserContentCountStats getGraphDataByUserIdAndDate(String userId, LocalDate date) {
+
+        return contentStatsRepository.findByUserIdAndDate(userId, date);
     }
 
 

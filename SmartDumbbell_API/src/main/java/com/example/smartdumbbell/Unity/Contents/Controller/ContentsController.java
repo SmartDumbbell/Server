@@ -1,8 +1,10 @@
 package com.example.smartdumbbell.Unity.Contents.Controller;
 
 import com.example.smartdumbbell.Unity.Contents.DTO.ClusteringDataDTO;
+import com.example.smartdumbbell.Unity.Contents.DTO.GraphInfoDTO;
 import com.example.smartdumbbell.Unity.Contents.DTO.UserContentCountStatsDTO;
 import com.example.smartdumbbell.Unity.Contents.DTO.UserContentScoreDTO;
+import com.example.smartdumbbell.Unity.Contents.Entity.UserContentCountStats;
 import com.example.smartdumbbell.Unity.Contents.Service.UserContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -53,6 +55,20 @@ public class ContentsController {
         } else {
             return ResponseEntity.badRequest().body("mismatched header");
         }
+    }
+
+    @PostMapping("/graphData")
+    public UserContentCountStats GraphDataSend(@RequestBody GraphInfoDTO graphInfoDTO,
+                                               @RequestHeader("Content-Type") String contentType){
+
+        if("application/json".equals(contentType)){
+            System.out.println(graphInfoDTO.getUserId() + " " + graphInfoDTO.getDate());
+
+
+            return userContentService.getGraphDataByUserIdAndDate(graphInfoDTO.getUserId(), graphInfoDTO.getDate());
+        }
+
+        return new UserContentCountStats();
     }
 
 
