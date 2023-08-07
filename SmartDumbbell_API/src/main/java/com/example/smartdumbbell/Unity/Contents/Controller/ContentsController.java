@@ -62,9 +62,6 @@ public class ContentsController {
                                                @RequestHeader("Content-Type") String contentType){
 
         if("application/json".equals(contentType)){
-            System.out.println(graphInfoDTO.getUserId() + " " + graphInfoDTO.getDate());
-
-
             return userContentService.getGraphDataByUserIdAndDate(graphInfoDTO.getUserId(), graphInfoDTO.getDate());
         }
 
