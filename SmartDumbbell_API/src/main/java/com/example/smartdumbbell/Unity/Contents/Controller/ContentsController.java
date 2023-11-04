@@ -11,6 +11,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -58,14 +59,13 @@ public class ContentsController {
     }
 
     @PostMapping("/graphData")
-    public UserContentCountStats GraphDataSend(@RequestBody GraphInfoDTO graphInfoDTO,
+    public ResponseEntity<List<UserContentCountStats>> GraphDataSend(@RequestBody GraphInfoDTO graphInfoDTO,
                                                @RequestHeader("Content-Type") String contentType){
-
+        List<UserContentCountStats> statsList = new ArrayList<>();
         if("application/json".equals(contentType)){
-            return userContentService.getGraphDataByUserIdAndDate(graphInfoDTO.getUserId(), graphInfoDTO.getDate());
+            statsList = userContentService.getGraphData(graphInfoDTO.getUserId());
         }
-
-        return new UserContentCountStats();
+        return new ResponseEntity<>(statsList, HttpStatus.OK);
     }
 
 

@@ -4,7 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fceb0d43-db7a-450b-81ae-523905d84a3f" name="Changes" comment="" />
+    <list default="true" id="fceb0d43-db7a-450b-81ae-523905d84a3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Config/CORSConfig/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Config/SecurityConfig/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Controller/InfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/DTO/JwtRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/DTO/JwtResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/DTO/JwtTokenDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/DTO/MemberSignupRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Domain/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Security/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Security/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Manager/Service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/MachineLearning/Controller/LearningController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/Controller/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/DTO/NoticeUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/DTO/NoticeWriteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/Domain/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/Repository/NoticeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/Notice/Service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Controller/UnityAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Auth/Service/UnityAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Controller/ContentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Controller/ContentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Entity/UserContentCountStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Entity/UserContentCountStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Entity/UserContentScoreStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Entity/UserContentScoreStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Repository/UserContentStatsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Repository/UserContentStatsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Service/UserContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Contents/Service/UserContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Measure/Entity/Measure.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Unity/Measure/Entity/Measure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/WebAuth/Controller/WebAuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/WebAuth/Entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/WebAuth/Entity/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/WebProcessData/Controller/ProcessDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/Web/WebProcessData/Controller/ProcessDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/java/com/example/smartdumbbell/example/Controller/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_API/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartDumbbell_API/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmartDumbbell_Web/src/main/resources/static/image/WebSystem_Main.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +56,21 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,7 +84,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/HYUNCOM/Desktop/졸작 깃허브/Server/SmartDumbbell_API",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -39,8 +99,13 @@
       <option name="presentableId" value="Default" />
       <updated>1684046670763</updated>
       <workItem from="1684046674168" duration="3000" />
+      <workItem from="1694968898044" duration="20000" />
+      <workItem from="1698497771099" duration="45000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

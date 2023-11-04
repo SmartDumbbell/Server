@@ -1,7 +1,5 @@
 package com.example.smartdumbbell.Web.WebProcessData.Controller;
 
-
-import com.example.smartdumbbell.Unity.Auth.DTO.SignUpDTO;
 import com.example.smartdumbbell.Unity.Auth.Entity.User;
 import com.example.smartdumbbell.Web.WebAuth.Entity.Admin;
 import com.example.smartdumbbell.Web.WebProcessData.DTO.TrainerNameDTO;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:9090")
 @RestController
 @RequestMapping("/WebProcess")
 public class ProcessDataController {

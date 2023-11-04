@@ -172,12 +172,18 @@ public class UserContentService {
         return contentStats;
     }
 
-    public UserContentCountStats getGraphDataByUserIdAndDate(String userId, LocalDate date) {
 
-        return contentStatsRepository.findByUserIdAndDate(userId, date);
+    public List<UserContentCountStats> getGraphData(String userId) {
+        List<UserContentCountStats> resultList = new ArrayList<>();
+
+        List<UserContentCountStats> allStats = contentStatsRepository.findAllByUserId(userId);
+
+        for(int i = allStats.size()-1;i>=0;i--){
+            resultList.add(allStats.get(i));
+        }
+
+        return resultList;
     }
-
-
 
     public List<ClusteringDataDTO> clusteringDataToSaveDTO() {
         List<ClusteringDataDTO> dataEntries = new ArrayList<>();
